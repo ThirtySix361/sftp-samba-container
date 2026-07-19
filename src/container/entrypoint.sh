@@ -47,6 +47,7 @@ cat > /etc/samba/smb.conf <<EOF
     path = /data/$NAS_NAME/
     valid users = $NAS_USER
     read only = no
+    hide dot files = no
 EOF
 
 #######################################################################################
