@@ -24,6 +24,8 @@ fi
 
 #######################################################################################
 
+if ! grep -q "^Match User $NAS_USER$" /etc/ssh/sshd_config; then
+
 cat >> /etc/ssh/sshd_config <<EOF
 Port 22
 Subsystem sftp internal-sftp
@@ -49,6 +51,8 @@ cat > /etc/samba/smb.conf <<EOF
     read only = no
     hide dot files = no
 EOF
+
+fi
 
 #######################################################################################
 
